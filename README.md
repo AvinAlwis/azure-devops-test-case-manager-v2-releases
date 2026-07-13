@@ -12,7 +12,8 @@ private repository.**
 
 1. Download **`AzureDevOpsTestCaseManager.V2-win-Setup.exe`** from the
    [latest release](../../releases/latest).
-2. Run it. The app installs per-user and launches itself.
+2. Run it. The app installs per-user as **"Test Case Manager"** and launches
+   itself.
 3. Sign in with your Microsoft account when prompted.
 
 There's also a **`-win-Portable.zip`** if you prefer an unpacked build. After
@@ -23,14 +24,23 @@ don't need to download future versions manually.
 
 - **Manual Entry** — author test cases (steps grid, module picklist, tags).
 - **Import File** — JSON round-trip import/export; a kept id updates, a null id
-  creates.
-- **Edit Test Cases** — multi-select (ctrl/shift), bulk edit, group by title.
-- **Run Tests & Runner** — record outcomes inline or in an always-on-top runner
-  with per-step results, screenshots (snip / paste / attach), and bug filing;
-  submits a new test run under the PBI's plan.
-- **Test Suites** — a searchable multi-level folder tree with view/edit/run.
+  creates. The review gate shows a **diff preview** for every queued update
+  (field old → new, step changes, no-op warnings) before anything is written.
+- **Edit Test Cases** — search/filter by title, id, or tag; multi-select
+  (ctrl/shift), bulk edit, group by title.
+- **Run Tests & Runner** — a read-only overview with per-case **run history
+  dots** (last five outcomes); pick cases and record outcomes in the
+  always-on-top runner with per-step results, screenshots (snip / paste /
+  attach), and bug filing; submits a new test run under the PBI's plan.
+- **Execution reports** — one click builds a shareable HTML summary (pass
+  rate, outcome bar, failures first with comments and linked bugs) for a PBI,
+  suite, or whole folder.
+- **Test Suites** — a searchable multi-level folder tree with
+  view / edit / run / report on every suite and folder.
 - **Work Manager** — a To Do / In Progress / Done board with a detail drawer
-  (markdown descriptions, comments, quick-create).
+  (markdown descriptions, comments, quick-create). Card moves are verified
+  against what Azure DevOps actually saved — rule-blocked transitions roll
+  back with the rule message instead of showing a wrong state.
 - **Themes** — selectable full-UI palettes (Light, Slate, Midnight, Graphite,
   Ocean, OLED) with accent presets.
 
